@@ -35,6 +35,7 @@ class Zend_Xml_Security
      *
      * @param  string $xml
      * @throws Zend_Xml_Exception If entity expansion or external entity declaration was discovered.
+     * @return void
      */
     protected static function heuristicScan($xml)
     {

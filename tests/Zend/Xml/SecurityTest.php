@@ -20,12 +20,6 @@
  * @version    $Id$
  */
 
-/**
- * @see Zend_Xml_Security
- */
-require_once 'Zend/Xml/Security.php';
-
-require_once 'Zend/Xml/Exception.php';
 
 /**
  * @category   Zend
@@ -65,15 +59,10 @@ XML;
     <result>&foo;</result>
 </results>
 XML;
+        $this->expectException('Zend_Xml_Exception');
+        $result = Zend_Xml_Security::scan($xml);
 
-        try {
-            $result = Zend_Xml_Security::scan($xml);
-        } catch (Zend_Xml_Exception $e) {
-            unlink($file);
-            return;
-        }
-
-        $this->fail('An expected exception has not been raised.');
+        unlink($file);
     }
 
     public function testScanSimpleXmlResult()

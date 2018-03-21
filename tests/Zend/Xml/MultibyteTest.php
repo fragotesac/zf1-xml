@@ -20,15 +20,6 @@
  * @version    $Id$
  */
 
-/**
- * This is a class that overrides Zend_Xml_Security to mark the heuristicScan()
- * method as public, allowing us to test it.
- *
- * @see Zend_Xml_Security
- */
-require_once 'Zend/Xml/TestAsset/Security.php';
-
-require_once 'Zend/Xml/Exception.php';
 
 /**
  * @category   Zend
@@ -73,7 +64,7 @@ XML;
      */
     public function invokeHeuristicScan($xml)
     {
-        return Zend_Xml_TestAsset_Security::heuristicScan($xml);
+        Zend_Xml_TestAsset_Security::heuristicScan($xml);
     }
 
     /**
@@ -124,8 +115,8 @@ XML;
         $xml = str_replace('{ENCODING}', $encoding, $xml);
         $xml = iconv('UTF-8', $encoding, $xml);
         try {
-            $result = $this->invokeHeuristicScan($xml);
-            $this->assertNull($result);
+            $this->invokeHeuristicScan($xml);
+            $this->assertTrue(true);
         } catch (Exception $e) {
             $this->fail('Security scan raised exception when it should not have');
         }

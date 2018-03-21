@@ -20,7 +20,6 @@
  * @version    $Id$
  */
 
-require_once 'Zend/Xml/Security.php';
 
 class Zend_Xml_TestAsset_Security extends Zend_Xml_Security
 {
@@ -29,6 +28,7 @@ class Zend_Xml_TestAsset_Security extends Zend_Xml_Security
      *
      * @param string $xml
      * @throws Zend_Xml_Exception If entity expansion or external entity declaration was discovered.
+     * @return void
      */
     public static function heuristicScan($xml)
     {
