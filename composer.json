@@ -1,5 +1,5 @@
 {
-    "name": "diablomedia/zendframework1-xml",
+    "name": "fragotesac/zf1-xml",
     "description": "Zend Framework 1 XML component",
     "type": "library",
     "keywords": [
@@ -14,7 +14,7 @@
         "ext-dom": "*",
         "ext-libxml": "*",
         "ext-SimpleXML": "*",
-        "diablomedia/zendframework1-exception": "^1.1.1"
+        "fragotesac/zf1-exception": "^1.1.1"
     },
     "autoload": {
         "psr-0": {
